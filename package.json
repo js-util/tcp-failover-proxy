@@ -10,6 +10,7 @@
 	],
 	"main": "TCPFailoverProxy.js",
 	"scripts": {
+		"start": "node commandline.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "picocreator",
