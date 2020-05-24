@@ -178,8 +178,9 @@ class TCPFailoverProxy {
 	 * | connectTimeout | 2500    | Connection timeout in milliseconds                    |
 	 * 
 	 * @param {Object} opt see options table above
+	 * @param {Function} callback to call after server setup is succesful, note failure triggers an exception instead
 	 */
-	constructor( opt ) {
+	constructor( opt, callback ) {
 		// Self reference
 		let self = this;
 
@@ -210,7 +211,7 @@ class TCPFailoverProxy {
 
 		// Scan for a valid backend route
 		self._setupBackendRoute(() => {
-			self._serverSetup();
+			self._serverSetup(callback);
 		});
 	}
 	
