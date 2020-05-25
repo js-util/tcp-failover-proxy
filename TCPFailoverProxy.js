@@ -353,7 +353,7 @@ class TCPFailoverProxy {
 
 			// Assume an error occurs sadly
 			if( self._log ) {
-				console.warn(`# [Warning] Unable to handle request, no valid backend found : ${err}`)
+				console.warn(`# [Warning] No valid backend found : ${err}`)
 			}
 		}, this._connectTimeout, this._log );
 	}
