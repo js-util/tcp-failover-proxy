@@ -308,7 +308,7 @@ class TCPFailoverProxy {
 
 		// Lets log the setup
 		if( self._log ) {
-			console.log(`# Starting server at - ${self._host?self._host:""}:${self._port}`)
+			console.log(`# Starting proxy server at - ${self._host?self._host:""}:${self._port}`)
 		}
 	}
 
