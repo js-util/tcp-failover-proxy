@@ -17,6 +17,11 @@ Setup a TCP proxy server, with automated failover - note this is not a loadbalan
 npm install --save @js-util/tcp-failover-proxy
 ```
 
+# Future TODO
+
+- ability to change out backend listing on demand
+- ability to run this in a seperate child process `.fork` thread, while maintaining existing interface.
+
 # Example usage
 
 > PS: This is incomplete code, you will need to modify for your actual use case.
