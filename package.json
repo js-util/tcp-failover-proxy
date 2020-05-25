@@ -30,7 +30,7 @@
 	},
 
 	"dependencies": {
-    "@js-util/array-shuffle": "^1.0.3",
+		"@js-util/array-shuffle": "^1.0.3",
 		"@js-util/net-socket-connect": "^1.0.0",
 		"@js-util/two-way-socket-pipe": "^1.0.0"
 	}
