@@ -118,6 +118,10 @@ function scanAndConnectToValidBackend(backendArr, callback, connectTimeout = 500
 	let scanPos  = 0;
 	let scanList = backendArr.slice(0);
 
+	// Lets increase the retry count of the "current" backend
+	// to avoid uneeded switching around
+	scanList = [scanList[0], scanList[0]].concat( scanList );
+
 	// Recursive scanning function
 	function recursiveScan() {
 		// Throw if scan list is empty
