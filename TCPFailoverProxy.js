@@ -265,7 +265,7 @@ class TCPFailoverProxy {
 		let shuffle = (opt.shuffle)? true : false;
 
 		// Get the connect timeout settings
-		let connectTimeout = opt._connectTimeout || 2500;
+		let connectTimeout = opt.connectTimeout || 2500;
 
 		// Store the settings
 		this._host            = host;
