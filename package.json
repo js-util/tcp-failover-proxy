@@ -1,6 +1,6 @@
 {
 	"name": "@js-util/tcp-failover-proxy",
-	"version": "1.0.9",
+	"version": "1.0.10",
 	"description": "Setup a TCP proxy server, with automated failover - note this is not a loadbalancing proxy.",
 
 	"keywords": [
