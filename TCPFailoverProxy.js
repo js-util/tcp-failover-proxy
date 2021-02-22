@@ -52,11 +52,11 @@ function normalizeBackendHostObject(backend) {
 		backendStr = backendStr.split("/").join("");
 
 		// Lets format the split data
-		let hostPortSplit = backend.split(":");
+		let hostPortSplit = backendStr.split(":");
 
 		// Throw an error if its not just the host/port pair
 		if( hostPortSplit.length > 2 ) {
-			throw `Unexpected to process backend connection string: ${backend}`
+			throw `Unexpected format for process backend connection string: ${backend}`
 		}
 
 		// The final formatted data
