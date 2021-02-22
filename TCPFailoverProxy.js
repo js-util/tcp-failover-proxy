@@ -38,10 +38,31 @@ function isValidPort(port) {
 function normalizeBackendHostObject(backend) {
 	// Process the host string
 	if( typeof backend == "string" || backend instanceof String ) {
-		let split = backend.split(":");
+
+		// The backend string to format
+		let backendStr = backend;
+
+		// Lets remove any protocal prefix
+		let idx = backendStr.indexOf("://")
+		if( idx >= 0 ) {
+			backendStr = backendStr.substr( idx + 3 );
+		}
+
+		// Lets remove any "/" pathing (avoid unexpected formats)
+		backendStr = backendStr.split("/").join("");
+
+		// Lets format the split data
+		let hostPortSplit = backend.split(":");
+
+		// Throw an error if its not just the host/port pair
+		if( hostPortSplit.length > 2 ) {
+			throw `Unexpected to process backend connection string: ${backend}`
+		}
+
+		// The final formatted data
 		backend = {
-			host: split[0],
-			port: parseInt( split[1] )
+			host: hostPortSplit[0],
+			port: parseInt( hostPortSplit[1] )
 		}
 	}
 
